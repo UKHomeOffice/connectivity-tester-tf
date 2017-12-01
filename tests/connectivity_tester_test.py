@@ -27,7 +27,6 @@ class TestE2E(unittest.TestCase):
         self.result = Runner(self.snippet).result
 
     def test_root_destroy(self):
-        print (self.result['tester'])
         self.assertEqual(self.result["destroy"], False)
 
     def test_iam_policy(self):
