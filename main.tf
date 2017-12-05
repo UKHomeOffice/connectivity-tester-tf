@@ -24,13 +24,37 @@ resource "aws_instance" "ConnectivityTester" {
   monitoring                  = true
   key_name                    = "${var.key_name}"
   security_groups             = "${var.security_groups}"
-  iam_instance_profile        = "${aws_iam_policy.policy.name}"
+  iam_instance_profile        = "${aws_iam_instance_profile.instance_profile.id}"
 }
 
-resource "aws_iam_policy" "policy" {
+resource "aws_iam_role" "iam_role" {
   name_prefix = "connectivity_tester"
-  path        = "/"
-  description = "Allow Connectivity Tester to publish to cloudwatch"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_instance_profile" "instance_profile" {
+  name_prefix = "connectivity_tester"
+  role        = "${aws_iam_role.iam_role.name}"
+}
+
+resource "aws_iam_role_policy" "iam_role_policy" {
+  name_prefix = "connectivity_tester"
+  role        = "${aws_iam_role.iam_role.id}"
 
   policy = <<EOF
 {
