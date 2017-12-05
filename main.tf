@@ -1,3 +1,5 @@
+provider "aws" {
+}
 data "aws_ami" "linux_connectivity_tester" {
   most_recent = true
 
