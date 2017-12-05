@@ -18,7 +18,6 @@ resource "aws_instance" "ConnectivityTester" {
   ami                         = "${data.aws_ami.linux_connectivity_tester.id}"
   instance_type               = "t2.nano"
   subnet_id                   = "${var.subnet_id}"
-  vpc_security_group_ids      = "${var.vpc_security_group_ids}"
   associate_public_ip_address = "${var.associate_public_ip_address}"
   user_data                   = "${var.user_data}"
   monitoring                  = true
