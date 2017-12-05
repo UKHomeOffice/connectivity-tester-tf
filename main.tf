@@ -24,7 +24,7 @@ resource "aws_instance" "ConnectivityTester" {
   monitoring                  = true
   key_name                    = "${var.key_name}"
   security_groups             = "${var.security_groups}"
-  iam_instance_profile        = "${aws_iam_policy.policy.id}"
+  iam_instance_profile        = "${aws_iam_policy.policy.name}"
 }
 
 resource "aws_iam_policy" "policy" {
