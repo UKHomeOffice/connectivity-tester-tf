@@ -22,7 +22,7 @@ resource "aws_instance" "ConnectivityTester" {
   user_data                   = "${var.user_data}"
   monitoring                  = true
   key_name                    = "${var.key_name}"
-  security_groups             = "${var.security_groups}"
+  security_groups             = ["${var.security_groups}"]
   iam_instance_profile        = "${aws_iam_instance_profile.instance_profile.id}"
 }
 
