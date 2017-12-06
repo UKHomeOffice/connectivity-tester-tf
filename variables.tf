@@ -26,3 +26,8 @@ variable "tags" {
     Name = "connectivity-tester"
   }
 }
+
+variable "private_ip" {
+  type    = "string"
+  default = ""
+}
