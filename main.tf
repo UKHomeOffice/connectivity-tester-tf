@@ -24,6 +24,7 @@ resource "aws_instance" "ConnectivityTester" {
   key_name                    = "${var.key_name}"
   security_groups             = ["${var.security_groups}"]
   iam_instance_profile        = "${aws_iam_instance_profile.instance_profile.id}"
+  tags                        = "${var.tags}"
 }
 
 resource "aws_iam_role" "iam_role" {

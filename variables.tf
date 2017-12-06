@@ -18,3 +18,11 @@ variable security_groups {
   type    = "list"
   default = []
 }
+
+variable "tags" {
+  type = "map"
+
+  default = {
+    Name = "connectivity-tester"
+  }
+}
