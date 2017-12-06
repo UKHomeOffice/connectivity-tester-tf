@@ -62,9 +62,7 @@ resource "aws_iam_role_policy" "iam_role_policy" {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Action": [
-        "cloudwatch:PutMetricData"
-      ],
+      "Action": "cloudwatch:PutMetricData",
       "Effect": "Allow",
       "Resource": "*"
     }
