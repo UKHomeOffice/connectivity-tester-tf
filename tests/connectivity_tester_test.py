@@ -30,7 +30,7 @@ class TestE2E(unittest.TestCase):
         self.assertEqual(self.result["destroy"], False)
 
     def test_iam_policy(self):
-        self.assertEqual(self.result['tester']["aws_iam_policy.policy"]['name_prefix'], 'connectivity_tester')
+        self.assertEqual(self.result['tester']["aws_iam_role_policy.iam_role_policy"]['name_prefix'], 'connectivity_tester')
 
     def test_instance(self):
         self.assertEqual(self.result['tester']["aws_instance.ConnectivityTester"]['user_data'],
