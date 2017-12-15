@@ -15,7 +15,8 @@ variable associate_public_ip_address {
 }
 
 variable security_groups {
-  default = false
+  type    = "list"
+  default = []
 }
 
 variable "tags" {
