@@ -15,7 +15,6 @@ variable associate_public_ip_address {
 }
 
 variable security_groups {
-  type    = "list"
   default = false
 }
 
