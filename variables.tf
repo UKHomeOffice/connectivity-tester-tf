@@ -1,13 +1,13 @@
 variable user_data {
-  default = false
+  default = ""
 }
 
 variable key_name {
-  default = false
+  default = ""
 }
 
 variable subnet_id {
-  default = false
+  default = ""
 }
 
 variable associate_public_ip_address {
@@ -29,5 +29,5 @@ variable "tags" {
 
 variable "private_ip" {
   type    = "string"
-  default = false
+  default = ""
 }
