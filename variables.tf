@@ -3,7 +3,7 @@ variable user_data {
 }
 
 variable key_name {
-  default = ""
+  default = "test_instance"
 }
 
 variable subnet_id {
