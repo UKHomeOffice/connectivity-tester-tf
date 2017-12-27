@@ -5,12 +5,12 @@ data "aws_ami" "linux_connectivity_tester" {
     name = "name"
 
     values = [
-      "connectivity-tester-linux*",
+      "connectivity_tester_encrypted_*",
     ]
   }
 
   owners = [
-    "093401982388",
+    "self",
   ]
 }
 
