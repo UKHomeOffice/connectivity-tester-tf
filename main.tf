@@ -5,7 +5,7 @@ data "aws_ami" "linux_connectivity_tester" {
     name = "name"
 
     values = [
-      "connectivity_tester_encrypted_*",
+      "connectivity-tester-linux*",
     ]
   }
 
