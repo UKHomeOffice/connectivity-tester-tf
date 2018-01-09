@@ -16,7 +16,7 @@ data "aws_ami" "linux_connectivity_tester" {
 
 resource "aws_instance" "ConnectivityTester" {
   ami                         = "${data.aws_ami.linux_connectivity_tester.id}"
-  instance_type               = "t2.nano"
+  instance_type               = "t2.micro"
   subnet_id                   = "${var.subnet_id}"
   associate_public_ip_address = "${var.associate_public_ip_address}"
   user_data                   = "${var.user_data}"
